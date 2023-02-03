@@ -6,7 +6,7 @@
 </head>
 <body>
 	
-<h1>敲电子木鱼，见赛博佛祖</h1>
+<h1 id="f1">噔噔咚！</h1>
 <p id="demo">
 功德=0
 </p>
@@ -17,6 +17,11 @@ function clickonce(){
 	cnt+=1
 	x=document.getElementById("demo");
 	x.innerHTML="功德="+cnt;
+	if(cnt==8){
+		alert("Yummy yummy!");
+		y=document.getElementById("f1");
+		y.innerHTML="I love You Yanran!";
+	}
 }
 function reset()
 {
