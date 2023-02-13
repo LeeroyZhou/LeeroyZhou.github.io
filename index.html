@@ -1,37 +1,96 @@
 <!DOCTYPE html>
-<html>
-<head> 
-<meta charset="utf-8"> 
-<title>功德无量机</title> 
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>电子木鱼和鲜花</title>
+
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="assets/fonts/simple-line-icons.css">
+
+<link rel="stylesheet" type="text/css" href="assets/css/slicknav.css">
+
+<link rel="stylesheet" type="text/css" href="assets/css/menu_sideslide.css">
+
+<link rel="stylesheet" type="text/css" href="assets/css/slide-style.css">
+
+<link rel="stylesheet" type="text/css" href="assets/css/nivo-lightbox.css">
+
+<link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+
+<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+<link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
 </head>
 <body>
-	
-<h1 id="f1">噔噔咚！</h1>
-<p id="demo">
-功德=0
-</p>
-<img src="woodfish.jpg" alt="Wood Fish" width="304" height="228" onclick="clickonce()">
+
+<header id="header-wrap">
+
+<nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+<div class="container">
+
+
+</nav>
+
+
+<div id="hero-area" class="hero-area-bg">
+<div class="overlay"></div>
+<div class="container">
+<div class="row">
+<div class="col-md-12 col-sm-12 text-center">
+<div class="contents">
+<h5 class="script-font wow fadeInUp">Hi, Dear 嫣然</h5>
+<h2 class="head-title wow fadeInUp">happy valentine's day!</h2>
+<p class="script-font wow fadeInUp">a gift webpage from your doggie boyfriend</p>
+<p ><img id="fish" src="assets/img/up.png" alt="Wood Fish" width="900" height="1000" onclick="clickonce()">
+</ul>
+<div class="header-button wow fadeInUp"> <a onclick="clickonce()" class="btn btn-common">Click Once</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</header>
+
+<audio id="sounds" volume = "100">
+    <source src="assets/click.ogg" type="audio/ogg">
+    当前浏览器不支持audio标签
+  </audio> 
+
 <script>
-var cnt=0
+var t;
+var a;
+var tt;
+var d = new Date();
+var tt = d.getTime();
+var notfirst = false;
 function clickonce(){
-	cnt+=1
-	x=document.getElementById("demo");
-	x.innerHTML="功德="+cnt;
-	if(cnt==8){
-		alert("Yummy yummy!");
-		y=document.getElementById("f1");
-		y.innerHTML="I love You Yanran!";
-	}
+    d= new Date();
+    if(notfirst && d.getTime()-tt < 500){
+        alert('你敲得太快了，佛祖可不高兴了！');
+        return;
+    }
+    clearTimeout(t);
+    t=setTimeout(reset, 500);
+    tt = d.getTime();
+    x=document.getElementById("fish");
+    x.src="assets/img/down.png";
+    a=document.getElementById("sounds");
+    a.pause();
+    a.play();
+    notfirst=true;
 }
-function reset()
-{
-	cnt=0
-	x=document.getElementById("demo");  // 找到元素
-	x.innerHTML="功德="+cnt;    // 改变内容
+function reset(){
+    x=document.getElementById("fish");
+    x.src="assets/img/up.png";
 }
 </script>
-</p>
-<button type="button" onclick="reset()">Reset</button>
-	
+
 </body>
 </html>
